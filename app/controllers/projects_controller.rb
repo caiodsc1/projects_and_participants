@@ -6,7 +6,7 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.all
+    @projects = Project.includes(:participants).all
 
     render json: @projects, include: :participants, status: 200
   end
