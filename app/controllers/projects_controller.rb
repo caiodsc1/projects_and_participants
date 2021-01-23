@@ -13,7 +13,9 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1
   # GET /projects/1.json
-  def show; end
+  def show
+    render json: @project, include: :participants, status: 200
+  end
 
   # GET /projects/new
   def new
