@@ -1,7 +1,7 @@
 class Project < ApplicationRecord
   has_many :participants
 
-  accepts_nested_attributes_for :participants
+  accepts_nested_attributes_for :participants, allow_destroy: true
 
   validates_presence_of :name, :start_date, :finish_date, :amount, :risk
   validates_numericality_of :amount, :risk
